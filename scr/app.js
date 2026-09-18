@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT;
 app.use(express.json());
+
+const port = process.env.PORT;
+
 
 
 app.listen(port, () =>{
@@ -14,6 +16,13 @@ app.post('/eco',(req,res) =>{
     console.log(req.body.text);
     res.json({'resposta' : req.body.text});
 
+
 });
 
 
+/*
+app.post('/chat', async (req,res) =>{
+    
+
+});
+*/

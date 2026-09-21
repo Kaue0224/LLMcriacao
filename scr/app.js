@@ -3,6 +3,10 @@ const app = express();
 app.use(express.json());
 
 const port = process.env.PORT;
+const llm = require('./llm');
+
+
+
 
 
 
@@ -20,9 +24,15 @@ app.post('/eco',(req,res) =>{
 });
 
 
-/*
+
 app.post('/chat', async (req,res) =>{
     
 
+    console.log(req.body.text);
+    const respostaLLM = await llm(req.body.text);
+
+    console.log(respostaLLM);
+
+
 });
-*/
+

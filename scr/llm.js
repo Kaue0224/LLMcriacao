@@ -14,12 +14,12 @@ async function  llm(mensagemUser){
 
         method: 'POST',
         headers: {
-            'Content-Type' : 'aplication/json'
+            'Content-Type' : 'application/json'
         },
         body: JSON.stringify(corpoMensagem)
     })
 
-    return await resposta.json();
+    return resposta.json();
 
 }
 

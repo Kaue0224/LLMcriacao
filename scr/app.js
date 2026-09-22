@@ -6,10 +6,6 @@ const port = process.env.PORT;
 const llm = require('./llm');
 
 
-
-
-
-
 app.listen(port, () =>{
     console.log('sevidor rodando na porta: ',port);
 });
@@ -23,8 +19,6 @@ app.post('/eco',(req,res) =>{
 
 });
 
-
-
 app.post('/chat', async (req,res) =>{
     
 
@@ -32,6 +26,7 @@ app.post('/chat', async (req,res) =>{
     const respostaLLM = await llm(req.body.text);
 
     console.log(respostaLLM);
+    res.json(respostaLLM['response']);
 
 
 });
